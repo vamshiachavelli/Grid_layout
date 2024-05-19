@@ -1,0 +1,64 @@
+html, body {
+    box-sizing: border-box;
+    height: 100%; /* Set height to fill the viewport */
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange children vertically */
+}
+
+.grid {
+    flex: 1;
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-rows: auto auto 1fr auto; /* Define rows: header, main content, footer */
+    grid-template-columns: auto;
+    grid-template-areas: 
+        'header header header'
+        'nav nav nav'
+        'leftside main rightside'
+        'footer footer footer';
+}
+
+header, footer,  nav, aside, main{
+    font-weight: 800;
+    font-size: larger;
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+main, aside{
+    flex-direction: column;
+}
+header{
+    grid-area: header;
+    background-color: yellow;
+}
+
+nav{
+    grid-area: nav;
+    background-color: green;
+}
+
+aside{
+    background-color: aqua;
+}
+
+main{
+    grid-area: main;
+    background-color: blue;
+}
+
+footer{
+    grid-area: footer;
+    background-color: yellow;
+}
+
+.leftside{
+    grid-area: leftside;
+}
+
+.rightside{
+    grid-area: rightside;
+}
